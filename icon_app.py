@@ -30,7 +30,7 @@ def get_db_connection():
         charset='utf8mb4',
         buffered=True,
         connection_timeout=60,
-        pool_size=32,
+        pool_size=65,
         pool_reset_session=True,
         sql_mode='TRADITIONAL',
         raise_on_warnings=False
@@ -39,7 +39,7 @@ def get_db_connection():
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() == 'csv'
 
-def create_table_from_csv_optimized(csv_file, table_name="csv_data11"):
+def create_table_from_csv_optimized(csv_file, table_name="csv_datayog"):
     start_time = time.time()
     
     try:
@@ -228,7 +228,7 @@ def index():
             logger.info(f"File saved: {filepath}")
             
             # Process CSV
-            row_count, processing_time = create_table_from_csv_optimized(filepath, table_name="csv_data11")
+            row_count, processing_time = create_table_from_csv_optimized(filepath, table_name="csv_datayog")
             
             success_message = f"✅ CSV uploaded successfully! {row_count} rows inserted in {processing_time} seconds"
             
