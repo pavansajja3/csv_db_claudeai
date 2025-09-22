@@ -21,10 +21,10 @@ os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
 # ✅ Cleaned DB connection (no pool)
 def get_db_connection():
     return mysql.connector.connect(
-        host="xxxxxx",          # ✅ Use IP or short hostname
+        host="digi-signage.c560k8amypvh.ap-south-1.rds.amazonawscom",          # ✅ Use IP or short hostname
         user="pavan",
-        password="xxxxxxx", # ❗ Replace with your actual password
-        database="xxxxxxx",
+        password="Welcome*1234", # ❗ Replace with your actual password
+        database="vote_track",
         autocommit=False,
         use_unicode=True,
         charset='utf8mb4',
